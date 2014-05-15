@@ -95,7 +95,9 @@ cd vim
             --enable-pythoninterp                              \
             --with-python-config-dir=/usr/lib/python2.7-config \
             --enable-perlinterp                                \
-            --enable-gui=gtk2 --enable-cscope --prefix=/usr    \
+            --enable-gui=gtk2                                  \
+            --enable-cscope                                    \
+            --prefix=/usr                                      \
             --enable-luainterp                                 \
             --with-lua-prefix=/usr/local                       \
 
@@ -111,15 +113,14 @@ show aptitude install -y \
   rbenv                  \
 
 # dotfiles
-cd ~
-git clone https://github.com/duckworthd/vim-config.git dotfiles
-cd dotfiles
+cd /vagrant/dotfiles
 git submodule init
 git submodule update
 
-ln   -s   dotfiles/.gitignore .
-ln   -s   dotfiles/.tmux.conf .
-ln   -s   dotfiles/.vim       .
-ln   -s   dotfiles/.vimrc     .
-ln   -s   dotfiles/.zsh       .
-ln   -s   dotfiles/.zshrc     .
+cd ~/
+ln -s /vagrant/dotfiles/.gitignore .
+ln -s /vagrant/dotfiles/.tmux.conf .
+ln -s /vagrant/dotfiles/.vim       .
+ln -s /vagrant/dotfiles/.vimrc     .
+ln -s /vagrant/dotfiles/.zsh       .
+ln -s /vagrant/dotfiles/.zshrc     .
